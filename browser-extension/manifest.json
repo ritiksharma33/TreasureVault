@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Treasure Vault Clip",
+  "version": "1.0",
+  "description": "Capture current YouTube video URL with a keyboard shortcut.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs",
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*.youtube.com/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "capture_vault": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+S",  
+        "mac": "Command+Shift+S"
+      },
+      "description": "Captures the URL and sends it to the Treasure Vault API."
+    }
+  }
+}

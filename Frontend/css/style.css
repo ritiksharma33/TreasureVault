@@ -1,0 +1,161 @@
+:root {
+    --color-bg: #111827; /* Dark Blue-Gray */
+    --color-bg-light: #1f2937; /* Lighter Blue-Gray */
+    --color-bg-lighter: #374151; /* Lightest Blue-Gray */
+    --color-text: #e5e7eb; /* Light Gray */
+    --color-text-dim: #9ca3af; /* Medium Gray */
+    --color-primary: #3b82f6; /* Blue */
+    --color-green: #22c55e;
+    --color-red: #ef4444;
+    --color-border: #4b5563;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+.app-container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+#vault-detail-view { display: none; }
+
+/* ------------------------- Header ------------------------- */
+.app-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding-bottom: 1.5rem; margin-bottom: 1.5rem;
+}
+.app-header h1 { font-size: 1.875rem; font-weight: bold; }
+
+/* ------------------------- Add URL Section ------------------------- */
+.add-vault-container {
+    background-color: var(--color-bg-light); padding: 1.5rem;
+    border-radius: 0.75rem; margin-bottom: 2rem; border: 1px dashed var(--color-border);
+}
+.add-vault-input {
+    width: 100%; padding: 0.75rem 1rem; font-size: 1rem;
+    background-color: var(--color-bg); border: 1px solid var(--color-border);
+    color: var(--color-text); border-radius: 0.5rem; margin-bottom: 1rem; font-family: inherit;
+}
+.add-vault-input::placeholder { color: var(--color-text-dim); }
+
+/* ------------------------- Buttons ------------------------- */
+.btn {
+    font-size: 0.875rem; font-weight: 600; padding: 0.6rem 1.2rem;
+    border: none; border-radius: 0.5rem; cursor: pointer; transition: all 0.2s ease;
+}
+.btn-primary { background-color: var(--color-primary); color: white; }
+.btn-primary:hover { opacity: 0.9; }
+.btn-green { background-color: var(--color-green); color: white; }
+.btn-green:hover { opacity: 0.9; }
+.btn-secondary { background-color: var(--color-bg-lighter); color: var(--color-text); }
+.btn-secondary:hover { background-color: #4b5563; }
+.btn-danger { background-color: var(--color-red); color: white; }
+.btn-danger:hover { opacity: 0.9; }
+.btn-link {
+    background: none; border: none; color: var(--color-primary);
+    font-size: 1rem; cursor: pointer;
+}
+.btn-link:hover { text-decoration: underline; }
+.btn-full-width { width: 100%; font-size: 1rem; padding: 0.75rem; }
+
+/* ------------------------- Vault Grid ------------------------- */
+#vault-grid-container {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--color-border);
+}
+.vault-card {
+    background-color: var(--color-bg-light); border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem; cursor: pointer; transition: all 0.2s ease;
+}
+.vault-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.5); /* Blue glow */
+}
+.vault-card .card-title {
+    font-size: 1.25rem; font-weight: 700; color: var(--color-text); margin-bottom: 1rem;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.vault-card .card-tags {
+    color: var(--color-text-dim); font-size: 0.875rem;
+    display: block; margin-bottom: 0.5rem;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.vault-card .card-date { margin-top: 1.5rem; font-size: 0.75rem; color: var(--color-text-dim); }
+
+/* ------------------------- Vault Detail View ------------------------- */
+#detail-content { max-width: 900px; margin: 0 auto; }
+.detail-section {
+    margin-bottom: 2.5rem; border-bottom: 1px solid var(--color-border);
+    padding-bottom: 2rem;
+}
+.detail-section:last-of-type { border-bottom: none; }
+.detail-section h2 { font-size: 1.125rem; font-weight: 600; margin-bottom: 1.5rem; letter-spacing: 0.05em; color: var(--color-text-dim); }
+.detail-box { background-color: var(--color-bg-light); padding: 1.5rem; border-radius: 0.75rem; }
+.detail-box p { line-height: 1.5; margin-bottom: 0.5rem; }
+.detail-box p strong { color: var(--color-text-dim); font-weight: 600; min-width: 100px; display: inline-block; }
+
+/* Tags */
+.tags-container { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.tag {
+    background-color: var(--color-bg-lighter); color: var(--color-primary);
+    padding: 0.35rem 0.85rem; border-radius: 99px; font-size: 0.875rem; font-weight: 500;
+}
+/* Ideas & Actions */
+.content-item {
+    font-size: 1.1rem; color: var(--color-text);
+    padding: 0.75rem 0; border-bottom: 1px solid var(--color-border);
+}
+.content-item:last-child { border-bottom: none; padding-bottom: 0; }
+.content-item:first-child { padding-top: 0; }
+
+/* Footer */
+.detail-footer { margin-top: 2rem; display: flex; gap: 1rem; }
+.detail-footer .btn-danger { margin-left: auto; /* Pushes delete to the right */ }
+
+/* ------------------------- Floating Action Button (FAB) ------------------------- */
+.fab {
+    position: fixed; bottom: 2rem; right: 2rem; width: 60px; height: 60px;
+    background-color: var(--color-primary); color: white; border: none;
+    border-radius: 50%; font-size: 2.5rem; line-height: 60px; text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); cursor: pointer;
+    transition: all 0.2s ease; z-index: 1000;
+}
+.fab:hover { transform: scale(1.1); opacity: 0.9; }
+
+/* ------------------------- Manual Add Modal ------------------------- */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(5px);
+    display: none; /* Hidden by default */
+    align-items: center; justify-content: center; z-index: 2000;
+}
+.modal-content {
+    background: var(--color-bg-light); padding: 2rem; border-radius: 0.75rem;
+    width: 90%; max-width: 600px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+.modal-content h2 { margin-bottom: 1.5rem; }
+.modal-footer {
+    display: flex; justify-content: flex-end; gap: 1rem; margin-top: 1.5rem;
+}
+
+/* Form styles for modal AND edit view */
+.form-group { display: flex; flex-direction: column; margin-bottom: 1.25rem; }
+.form-group label {
+    font-weight: 500; margin-bottom: 0.5rem; color: var(--color-text-dim);
+}
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%; padding: 0.75rem; font-size: 1rem; font-family: inherit;
+    background-color: var(--color-bg); border: 1px solid var(--color-border);
+    border-radius: 0.5rem; color: var(--color-text);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+    outline: none; border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
