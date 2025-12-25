@@ -1,6 +1,3 @@
-Here is a professional, high-quality **README.md** file tailored specifically for your project. You can copy this directly into a new file named `README.md` in your root `TreasureVault` folder.
-
----
 
 # 🎓 Treasure Vault
 
