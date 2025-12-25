@@ -92,3 +92,26 @@ python3 -m uvicorn main:app --reload
 
 Make sure your **Backend** is running before using the extension or the dashboard, as they both rely on the API to save and load data.
 
+🚀 Roadmap: Upcoming Features
+To make Treasure Vault even more powerful, the following features are currently under development:
+
+🔐 **1. Multi-User Authentication (Secure Accounts)**
+Personal Vaults: Implementing a secure login system so each user can only see and manage their own private data.
+
+Google OAuth Integration: Allow users to sign in instantly with their Google accounts for a seamless experience.
+
+Encrypted Storage: Enhancing database security to ensure all ideas and transcripts are kept private.
+
+🔍 **2. Advanced Global Search**
+Instant Search: A real-time search bar at the top of the dashboard to filter vaults by title or tags as you type.
+
+Full-Text Search: The ability to search inside the transcripts to find specific keywords or "Big Ideas" hidden in your library.
+
+Tag Filtering: A dedicated tag-cloud to quickly view all vaults related to a specific topic (e.g., "Productivity," "Coding," "Finance").
+
+🤖 **3. AI-Powered Insights (Action Points)**
+Automated Summarization: Integration with Large Language Models (LLMs) to automatically summarize 20-minute transcripts into 5 key bullet points.
+
+Smart Action Items: AI will automatically scan the transcript text and extract "Actionable Steps" into the Practical Actions field.
+
+Auto-Tagging: The system will suggest relevant tags based on the video content, saving you the time of manual labeling
