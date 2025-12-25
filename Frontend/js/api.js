@@ -161,14 +161,15 @@ async function deleteVault(vaultId) {
 /**
  * Sends a YouTube URL to the backend to fetch its transcript and save as a vault.
  */
+// File: frontend/js/api.js
+
 async function fetchTranscriptAndSave(url) {
     const response = await fetch(`${API_BASE_URL}${API_PREFIX}/transcript`, {
         method: 'POST',
-        headers: getJsonAuthHeaders(), // Sending JSON and Auth Header
+        headers: { 'Content-Type': 'application/json' }, // REMOVED getJsonAuthHeaders
         body: JSON.stringify({ url: url }),
     });
 
-    // Transcript endpoint now saves directly and returns the Vault object
     const checkedResponse = await checkResponse(response);
-    return await checkedResponse.json();
+    return await checkedResponse.json(); // This returns the newly created Vault object
 }

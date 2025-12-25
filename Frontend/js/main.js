@@ -169,6 +169,7 @@ transcriptCancelBtn.addEventListener('click', () => transcriptModal.style.displa
 transcriptCopyBtn.addEventListener('click', handleCopyTranscript);
 transcriptSaveForm.addEventListener('submit', handleSaveTranscriptToVault);
 
+// File: frontend/js/main.js
 
 async function handleFetchTranscript() {
     const url = addUrlInput.value.trim();
@@ -181,14 +182,15 @@ async function handleFetchTranscript() {
     createVaultUrlBtn.textContent = 'Processing...';
 
     try {
-        const data = await fetchTranscript(url);
-        currentTranscript = data.transcript;
-        currentUrl = data.url;
+        // CALL the api.js function correctly
+        const newVault = await fetchTranscriptAndSave(url);
         
+        console.log("Vault created:", newVault);
 
-        transcriptTextArea.value = data.transcript;
-        transcriptTitleInput.value = data.suggested_title;
-        transcriptModal.style.display = 'flex';
+        // SUCCESS ACTIONS:
+        addUrlInput.value = ''; // Clear the input
+        await loadAndDisplayVaults(); // Refresh your grid to show the new vault
+        
         
     } catch (error) {
         alert(`Error fetching transcript: ${error.message}`);
@@ -198,7 +200,6 @@ async function handleFetchTranscript() {
         createVaultUrlBtn.textContent = 'Create Vault from URL';
     }
 }
-
 
 function handleCopyTranscript() {
     if (currentTranscript) {
