@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+sqlalchemy
+youtube-transcript-api
+requests
+python-multipart
