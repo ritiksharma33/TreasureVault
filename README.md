@@ -1,117 +1,88 @@
 
-# 🎓 Treasure Vault
 
-Treasure Vault is a powerful knowledge management system designed to capture, organize, and store high-value insights from YouTube videos and manual entries. It helps you turn passive watching into an active library of ideas and actions.
+# 🏴‍☠️ Treasure Vault: YouTube Intelligence System
 
-## 🚀 Core Features
+"Stop watching, start capturing. Turn passive scrolling into an actionable library of wisdom."
 
-* **YouTube Intelligence:** Generate vaults automatically by pasting a YouTube URL. The system fetches the transcript for you to review and save.
-* **One-Click Clipping:** Use the integrated **Chrome Extension** to capture videos directly while browsing YouTube.
-* **Manual Entries:** Create "Manual Vaults" for your own thoughts, book notes, or meeting insights.
-* **Full CRUD Support:**
-* **Create:** Multiple ways to add content (URL, Extension, Manual).
-* **Read:** Clean grid view to browse your library and a detailed view for deep reading.
-* **Update:** Edit your ideas, titles, or tags at any time.
-* **Delete:** Remove vaults you no longer need with a single click.
+<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7410009374246764544?compact=1" height="399" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
 
+**Treasure Vault** is a full-stack knowledge management engine. It uses a custom **Chrome Extension** and a **FastAPI backend** to strip the noise from YouTube videos, extracting transcripts and turning them into "Knowledge Vaults" instantly.
 
-* **Organized Tags:** Categorize your knowledge using custom tags for easy filtering.
+-----
+## 📺 The Workflow
 
----
+1.  **Discover:** Find a high-value video on YouTube.
+2.  **Extract:** Click the **Treasure Vault Extension** or paste the URL.
+3.  **Refine:** Review the auto-fetched transcript in your clean dashboard.
+4.  **Action:** Turn notes into a "Manual Vault" for long-term storage.
 
-## 🛠️ Project Structure
+-----
 
-* **/backend**: FastAPI (Python) server handling database logic and transcript scraping.
-* **/Frontend**: Vanilla JavaScript dashboard for managing your vaults.
-* **/browser-extension**: Chrome-compatible extension for instant video clipping.
+## 🌟 Key Features
 
----
+  * **⚡ One-Click Clipping:** A dedicated **Chrome Extension** to capture insights without leaving YouTube.
+  * **🤖 Transcript Intelligence:** Automatically fetches full transcripts via the YouTube API.
+  * **🗃️ Hybrid Storage:** Support for both automated YouTube extraction and manual "Brain Dumps."
+  * **🏷️ Tagging System:** Categorize your knowledge (e.g., \#Coding, \#Finance, \#Productivity) for instant retrieval.
 
-## 💻 Installation & Setup
+-----
 
-### 1. Backend Setup
+## 🛠️ The Tech Stack
 
-1. Navigate to the backend folder: `cd backend`
-2. Install dependencies: `pip install -r requirements.txt` (or install `fastapi`, `uvicorn`, `sqlalchemy`, `youtube-transcript-api` manually).
-3. Start the server:
+| Layer | Technology | Role |
+| :--- | :--- | :--- |
+| **Backend** | **Python / FastAPI** | High-performance API handling & Scraping. |
+| **Frontend** | **Vanilla JS / CSS3** | Clean, dependency-free dashboard UI. |
+| **Extension** | **Chrome API** | Background script for seamless browser integration. |
+| **Database** | **SQLAlchemy (SQLite)** | Lightweight, reliable relational storage. |
+
+-----
+
+## 🛡️ Security & Integrity (Roadmap v2.0)
+
+We are currently moving towards an enterprise-grade security model:
+
+1.  **Google OAuth:** Seamless, secure login for private vaults.
+2.  **Encrypted Storage:** Ensuring your private notes stay private.
+3.  **JWT Validation:** Securing the bridge between the Extension and the Backend.
+
+-----
+
+## 🤖 AI Insights (Coming Soon)
+
+We are integrating **LLMs** to move beyond simple transcripts:
+
+  * **Summarization:** Turn 20-minute videos into 5 bullet points.
+  * **Action Extraction:** AI identifies "To-Do" items mentioned in the video.
+  * **Auto-Tagging:** Intelligent categorization based on video context.
+
+-----
+
+## 💻 Local Setup
+
+### 1\. The Engine (Backend)
+
 ```bash
+cd backend
+pip install -r requirements.txt
 python3 -m uvicorn main:app --reload
-
 ```
 
+### 2\. The Dashboard (Frontend)
 
-*The API will run at `http://127.0.0.1:8000*`
+Simply open `index.html` using **Live Server** on Port 5500.
 
-### 2. Frontend Setup
+### 3\. The Tool (Extension)
 
-1. Open the `Frontend` folder in VS Code.
-2. Launch `index.html` using **Live Server** (Port 5500).
-*The dashboard will run at `http://127.0.0.1:5500*`
+1.  Go to `chrome://extensions/`
+2.  Enable **Developer Mode**.
+3.  Click **Load Unpacked** and select the `/browser-extension` folder.
+4.  <img width="1440" height="811" alt="Screenshot 2026-03-19 at 3 47 31 PM" src="https://github.com/user-attachments/assets/d9636548-c3b7-42d5-8117-478dcbb1026b" />
+<img width="1440" height="822" alt="Screenshot 2026-03-19 at 3 47 14 PM" src="https://github.com/user-attachments/assets/5865aece-967d-48f5-9a92-4e7e0544ab2f" />
+<img width="1440" height="821" alt="Screenshot 2026-03-19 at 3 47 00 PM" src="https://github.com/user-attachments/assets/f2ba0300-2d85-4d2b-a4d4-da7fe27cae00" />
 
-### 3. Extension Installation
+-----
 
-1. Open Google Chrome and go to `chrome://extensions/`.
-2. Enable **Developer Mode** (top right toggle).
-3. Click **Load Unpacked**.
-4. Select the `browser-extension` folder from this project.
-5. The Treasure Vault icon will now appear in your browser bar!
+Built with ❤️ for learners and builders. Check out my other projects on [GitHub](https://github.com/ritiksharma33).
 
----
-
-## 📖 How to Use
-
-### Creating a Vault via YouTube Link
-
-1. Copy a YouTube video URL.
-2. Paste it into the input bar at the top of the Dashboard.
-3. Click **Create Vault from URL**. The transcript will be fetched and saved to your grid.
-
-### Creating a Vault via Chrome Extension
-
-1. While watching any YouTube video, click the **Treasure Vault extension icon**.
-2. Click **Save to Vault**.
-3. The video transcript will be sent directly to your backend and appear in your dashboard.
-
-### Managing your Vaults
-
-* **View:** Click on any card in the grid to see the full transcript and ideas.
-* **Edit:** Click the **Edit** button inside the detail view to update the content.
-* **Delete:** Click the **Delete** button to permanently remove a vault.
-
----
-
-## 📝 Technologies Used
-
-* **Backend:** Python, FastAPI, SQLAlchemy (SQLite)
-* **Frontend:** HTML5, CSS3, JavaScript (ES6+)
-* **Scraping:** YouTube Transcript API
-
----
-
-### 💡 Pro Tip
-
-Make sure your **Backend** is running before using the extension or the dashboard, as they both rely on the API to save and load data.
-
-🚀 Roadmap: Upcoming Features
-To make Treasure Vault even more powerful, the following features are currently under development:
-
-🔐 **1. Multi-User Authentication (Secure Accounts)**
-Personal Vaults: Implementing a secure login system so each user can only see and manage their own private data.
-
-Google OAuth Integration: Allow users to sign in instantly with their Google accounts for a seamless experience.
-
-Encrypted Storage: Enhancing database security to ensure all ideas and transcripts are kept private.
-
-🔍 **2. Advanced Global Search**
-Instant Search: A real-time search bar at the top of the dashboard to filter vaults by title or tags as you type.
-
-Full-Text Search: The ability to search inside the transcripts to find specific keywords or "Big Ideas" hidden in your library.
-
-Tag Filtering: A dedicated tag-cloud to quickly view all vaults related to a specific topic (e.g., "Productivity," "Coding," "Finance").
-
-🤖 **3. AI-Powered Insights (Action Points)**
-Automated Summarization: Integration with Large Language Models (LLMs) to automatically summarize 20-minute transcripts into 5 key bullet points.
-
-Smart Action Items: AI will automatically scan the transcript text and extract "Actionable Steps" into the Practical Actions field.
-
-Auto-Tagging: The system will suggest relevant tags based on the video content, saving you the time of manual labeling
+-----
