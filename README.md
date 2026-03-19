@@ -7,6 +7,10 @@
 ![Free Universe Stars Video Gif Animated Zoom Virtual Background (1) (1)](https://github.com/user-attachments/assets/95c695cc-9b7b-49c2-a35b-5659d3ebbf2b)
 
 
+https://github.com/user-attachments/assets/9146822a-ecd5-4c86-b5b5-c32331383a35
+
+
+
 **Treasure Vault** is a full-stack knowledge management engine. It uses a custom **Chrome Extension** and a **FastAPI backend** to strip the noise from YouTube videos, extracting transcripts and turning them into "Knowledge Vaults" instantly.
 
 -----
