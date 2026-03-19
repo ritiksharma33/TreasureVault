@@ -4,7 +4,8 @@
 
 "Stop watching, start capturing. Turn passive scrolling into an actionable library of wisdom."
 
-<iframe src="https://www.linkedin.com/embed/feed/update/urn:li:ugcPost:7410009374246764544?compact=1" height="399" width="504" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+![Free Universe Stars Video Gif Animated Zoom Virtual Background (1) (1)](https://github.com/user-attachments/assets/95c695cc-9b7b-49c2-a35b-5659d3ebbf2b)
+
 
 **Treasure Vault** is a full-stack knowledge management engine. It uses a custom **Chrome Extension** and a **FastAPI backend** to strip the noise from YouTube videos, extracting transcripts and turning them into "Knowledge Vaults" instantly.
 
